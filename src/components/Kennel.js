@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./Kennel.css";
-import AnimalCard from "./animal/AnimalCard";
-import OwnerCard from "./owners/OwnerCard";
-import LocationCard from "./locations/LocationCard";
-import EmployeeCard from "./employees/EmployeeCard";
+// import AnimalCard from "./animal/AnimalCard";
+// import OwnerCard from "./owners/OwnerCard";
+// import LocationCard from "./locations/LocationCard";
+// import EmployeeCard from "./employees/EmployeeCard";
 import NavBar from "./nav/NavBar";
 import ApplicationViews from "./ApplicationViews";
 
