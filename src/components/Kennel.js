@@ -20,4 +20,11 @@ class Kennel extends Component {
   }
 }
 
+// index.js is invoked first and it renders the <Router> with Kennel.js
+// Kennel.js renders the <NavBar> and <ApplicationViews>
+// <NavBar> contains links to other views
+// <ApplicationViews> renders routes based on the URL.
+// When viewing the Animals section, AnimalCard.js will load up and invoke render().
+// Our page displays.
+
 export default Kennel;

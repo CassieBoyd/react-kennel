@@ -1,7 +1,7 @@
 import { Route } from 'react-router-dom'
 import React, { Component } from 'react'
 import Home from './home/Home'
-import AnimalCard from './animal/AnimalCard'
+import AnimalList from './animal/AnimalList'
 //only include these once they are built - previous practice exercise
 import LocationCard from './locations/LocationCard'
 import EmployeeCard from './employees/EmployeeCard'
@@ -17,7 +17,7 @@ class ApplicationViews extends Component {
           return <Home />
         }} />
         <Route path="/animals" render={(props) => {
-          return <AnimalCard />
+          return <AnimalList />
         }} />
         <Route path="/owners" render={(props) => {
           return <OwnerCard />
