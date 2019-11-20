@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./Employee.css";
 
 class EmployeeCard extends Component {
   render() {

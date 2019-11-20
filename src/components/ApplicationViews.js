@@ -5,7 +5,7 @@ import AnimalList from './animal/AnimalList'
 //only include these once they are built - previous practice exercise
 import LocationList from './locations/LocationList'
 import EmployeeList from './employees/EmployeeList'
-import OwnerCard from './owners/OwnerCard'
+import OwnerList from './owners/OwnerList'
 
 
 class ApplicationViews extends Component {
@@ -20,7 +20,7 @@ class ApplicationViews extends Component {
           return <AnimalList />
         }} />
         <Route path="/owners" render={(props) => {
-          return <OwnerCard />
+          return <OwnerList />
         }} />
         <Route path="/employees" render={(props) => {
           return <EmployeeList />
