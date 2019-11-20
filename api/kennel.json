@@ -19,6 +19,16 @@
       "id": 4,
       "name": "Elliot",
       "breed": "Dragon"
+    },
+    {
+      "id": 5,
+      "name": "Expendable",
+      "breed": "Ghost"
+    },
+    {
+      "id": 6,
+      "name": "Cannon Fodder",
+      "breed": "Also a ghost"
     }
   ],
   "employees": [
@@ -37,6 +47,10 @@
     {
       "id": 4,
       "name": "Snow White"
+    },
+    {
+      "id": 5,
+      "name": "Thing 1"
     }
   ],
   "locations": [
