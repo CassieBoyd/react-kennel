@@ -23,20 +23,35 @@ import React, { Component } from 'react'
         })
     }
 
+    deleteAnimal = id => {
+        AnimalManager.delete(id)
+        .then(() => {
+          AnimalManager.getAll()
+        //   setState after delete
+          .then((newAnimals) => {
+            this.setState({
+                animals: newAnimals
+            })
+          })
+        })
+      }
+
     // Function definition
     render(){
-        console.log("ANIMAL LIST: Render");
-
-        // For each item render AnimalCard
+        console.log("AnimalList: Render");
+      console.log(this.state.animals)
         return(
-            <div className="container-cards">
-
-                {/* {} for vanilla JS within JSX */}
-                {/* (animal => is item being looped through. AnimalCard is a function, return object */}
-                {this.state.animals.map(animal => <AnimalCard key={animal.id} animal={animal}/>)}
-            </div>
+          <div className="container-cards">
+            {this.state.animals.map(animal =>
+              <AnimalCard
+                key={animal.id}
+                animal={animal}
+                deleteAnimal={this.deleteAnimal}
+              />
+            )}
+          </div>
         )
-    }
+      }
 }
 
 export default AnimalList
