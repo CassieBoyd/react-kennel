@@ -1,0 +1,82 @@
+{
+  "animals": [
+    {
+      "id": 1,
+      "name": "Hedwig",
+      "breed": "Snowy Owl"
+    },
+    {
+      "id": 2,
+      "name": "Eureka",
+      "breed": "Domestic Shorthair"
+    },
+    {
+      "id": 3,
+      "name": "Crookshanks",
+      "breed": "Half-Kneazle"
+    },
+    {
+      "id": 4,
+      "name": "Elliot",
+      "breed": "Dragon"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Hagrid"
+    },
+    {
+      "id": 2,
+      "name": "Dr. Dolittle"
+    },
+    {
+      "id": 3,
+      "name": "Fluttershy"
+    },
+    {
+      "id": 4,
+      "name": "Snow White"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Hogwarts"
+    },
+    {
+      "id": 2,
+      "name": "Puddleby-on-the-Marsh"
+    },
+    {
+      "id": 3,
+      "name": "Ponyville"
+    },
+    {
+      "id": 4,
+      "name": "Brussels"
+    }
+  ],
+  "owners": [
+    {
+      "id": 1,
+      "name": "Harry Potter",
+      "phoneNumber": "273-234-4756"
+    },
+    {
+      "id": 2,
+      "name": "Pete",
+      "phoneNumber": "023-483-2803"
+    },
+    {
+      "id": 3,
+      "name": "John Wick",
+      "phoneNumber": "656-960-8578"
+    },
+    {
+      "id": 4,
+      "name": "Dorothy Gale",
+      "phoneNumber": "868-869-8565"
+    }
+  ]
+}

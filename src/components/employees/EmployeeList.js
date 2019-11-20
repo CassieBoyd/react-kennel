@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 //import the components we will need
 import EmployeeCard from "./EmployeeCard";
-import EmployeesManager from "../../modules/EmployeesManager";
+import EmployeeManager from "../../modules/EmployeeManager";
 
 // class is an object
 class EmployeeList extends Component {
@@ -13,7 +13,7 @@ class EmployeeList extends Component {
   componentDidMount() {
     console.log("ANIMAL LIST: ComponentDidMount");
     //getAll from EmployeeManager and hang on to that data; put it in state
-    EmployeesManager.getAll().then(employeesArray => {
+    EmployeeManager.getAll().then(employeesArray => {
       // Always update state with .setState, takes an object
       this.setState({
         employees: employeesArray
