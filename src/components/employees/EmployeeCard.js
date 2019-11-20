@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "../Kennel.css"
 import "./Employee.css";
 
 class EmployeeCard extends Component {
@@ -7,7 +8,7 @@ class EmployeeCard extends Component {
       <div className="card">
           <div className="card-content">
             <h2>Name: <span className="card-employeename">{this.props.employee.name}</span></h2>
-            {/* <p>Breed: {this.props.a.breed}</p> */}
+            <button type="button" onClick={() => this.props.deleteEmployee(this.props.employee.id)}>Obliviate</button>
           </div>
       </div>
     );
