@@ -5,6 +5,7 @@ import './LocationDetail.css'
 class LocationDetail extends Component {
 
   state = {
+      name: "",
       address: "",
       phoneNumber: "",
   }

@@ -47,6 +47,7 @@ import './AnimalDetail.css'
 
 class AnimalDetail extends Component {
 
+    // State is a template
     state = {
         name: "",
         breed: "",
