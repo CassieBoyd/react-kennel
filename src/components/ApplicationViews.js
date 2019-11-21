@@ -2,11 +2,12 @@ import { Route } from "react-router-dom";
 import React, { Component } from "react";
 import Home from "./home/Home";
 import AnimalList from "./animal/AnimalList";
-import AnimalDetail from "./animal/AnimalDetail"
+import AnimalDetail from "./animal/AnimalDetail";
 //only include these once they are built - previous practice exercise
 import LocationList from "./locations/LocationList";
 import EmployeeList from "./employees/EmployeeList";
 import OwnerList from "./owners/OwnerList";
+import AnimalForm from "./animal/AnimalForm";
 
 class ApplicationViews extends Component {
   render() {
@@ -24,23 +25,29 @@ class ApplicationViews extends Component {
           exact
           path="/animals"
           render={props => {
-            return <AnimalList />;
+            return <AnimalList {...props} />;
           }}
         />
-
         {/* When route matches this path, execute a function */}
         <Route
           path="/animals/:animalId(\d+)"
           render={props => {
             // Pass the animalId to the AnimalDetailComponent as props
             return (
-              <AnimalDetail animalId={parseInt(props.match.params.animalId)} 
-              {...props}
+              <AnimalDetail
+                animalId={parseInt(props.match.params.animalId)}
+                {...props}
               />
             );
           }}
         />
-
+        
+        <Route
+          path="/animals/new"
+          render={props => {
+            return <AnimalForm {...props} />;
+          }}
+        />
         {/*
   This is a new route to handle a URL with the following pattern:
   http://localhost:3000/animals/1

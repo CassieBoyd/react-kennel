@@ -29,6 +29,11 @@
       "id": 6,
       "name": "Cannon Fodder",
       "breed": "Also a ghost"
+    },
+    {
+      "name": "Peach",
+      "breed": "American Shorthair",
+      "id": 7
     }
   ],
   "employees": [
@@ -56,19 +61,27 @@
   "locations": [
     {
       "id": 1,
-      "name": "Hogwarts"
+      "name": "Hogwarts",
+      "phoneNumber": "273-234-4756",
+      "address": "10972 Voldy Blvd."
     },
     {
       "id": 2,
-      "name": "Puddleby-on-the-Marsh"
+      "name": "Puddleby-on-the-Marsh",
+      "phoneNumber": "324-535-5564",
+      "address": "3094 London Bridge Pkwy."
     },
     {
       "id": 3,
-      "name": "Ponyville"
+      "name": "Ponyville",
+      "phoneNumber": "788-324-5237",
+      "address": "283 Angel Bunny Ct."
     },
     {
       "id": 4,
-      "name": "Brussels"
+      "name": "Brussels",
+      "phoneNumber": "254-756-7785",
+      "address": "221B Baker St."
     }
   ],
   "owners": [
