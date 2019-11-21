@@ -21,20 +21,33 @@ class OwnerList extends Component {
     });
   }
 
-  // Function definition
-  render() {
-    console.log("OWNER LIST: Render");
+  deleteOwner = id => {
+    OwnerManager.delete(id)
+    .then(() => {
+      OwnerManager.getAll()
+      .then((newOwners) => {
+        this.setState({
+            owners: newOwners
+        })
+      })
+    })
+  }
 
-    // For each item render EmployeeCard
-    return (
+  // Function definition
+  render(){
+    console.log("OwnerList: Render");
+  
+    return(
       <div className="container-cards">
-        {/* {} for vanilla JS within JSX */}
-        {/* (employee => is item being looped through. EmployeeCard is a function, return object */}
-        {this.state.owners.map(owner => (
-          <OwnerCard key={owner.id} owner={owner} />
-        ))}
+        {this.state.owners.map(owner =>
+          <OwnerCard
+            key={owner.id}
+            owner={owner}
+            deleteOwner={this.deleteOwner}
+          />
+        )}
       </div>
-    );
+    )
   }
 }
 
