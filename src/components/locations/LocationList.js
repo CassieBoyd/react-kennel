@@ -21,20 +21,33 @@ class LocationList extends Component {
     });
   }
 
+  deleteLocation = id => {
+    LocationManager.delete(id)
+    .then(() => {
+      LocationManager.getAll()
+      .then((newLocations) => {
+        this.setState({
+            locations: newLocations
+        })
+      })
+    })
+  }
+
   // Function definition
-  render() {
-    console.log("LOCATION LIST: Render");
-console.log("state", this.state)
-    // For each item render EmployeeCard
-    return (
+  render(){
+    console.log("LocationList: Render");
+  
+    return(
       <div className="container-cards">
-        {/* {} for vanilla JS within JSX */}
-        {/* (employee => is item being looped through. EmployeeCard is a function, return object */}
-        {this.state.locations.map(location => (
-          <LocationCard key={location.id} location={location} />
-        ))}
+        {this.state.locations.map(location =>
+          <LocationCard
+            key={location.id}
+            location={location}
+            deleteLocation={this.deleteLocation}
+          />
+        )}
       </div>
-    );
+    )
   }
 }
 
