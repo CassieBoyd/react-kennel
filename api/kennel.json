@@ -29,6 +29,11 @@
       "id": 6,
       "name": "Cannon Fodder",
       "breed": "Also a ghost"
+    },
+    {
+      "name": "Peach",
+      "breed": "American Shorthair",
+      "id": 7
     }
   ],
   "employees": [

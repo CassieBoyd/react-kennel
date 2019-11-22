@@ -2,12 +2,13 @@ import { Route, withRouter, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import Home from "./home/Home";
 import AnimalList from "./animal/AnimalList";
-import AnimalDetail from "./animal/AnimalDetail"
+import AnimalDetail from "./animal/AnimalDetail";
 //only include these once they are built - previous practice exercise
 import LocationList from "./locations/LocationList";
 import EmployeeList from "./employees/EmployeeList";
 import OwnerList from "./owners/OwnerList";
 import Login from './auth/Login'
+import AnimalForm from "./animal/AnimalForm";
 
 class ApplicationViews extends Component {
 
@@ -27,16 +28,13 @@ class ApplicationViews extends Component {
           }}
         />
         {/* Make sure you add the `exact` attribute here */}
-        <Route
-          exact
-          path="/animals"
-          render={props => {
-            return <AnimalList />;
-          }}
-        />
-
-<Route path="/login" component={Login} />
-
+        <Route exact path="/animals" render={props => {
+    if (this.isAuthenticated()) {
+        return <AnimalList {...props} />
+    } else {
+        return <Redirect to="/login" />
+    }
+}} />
 
         {/* When route matches this path, execute a function */}
         <Route
@@ -44,13 +42,21 @@ class ApplicationViews extends Component {
           render={props => {
             // Pass the animalId to the AnimalDetailComponent as props
             return (
-              <AnimalDetail animalId={parseInt(props.match.params.animalId)} 
+              <AnimalDetail
+              animalId={parseInt(props.match.params.animalId)}
               {...props}
               />
-            );
+              );
+            }}
+        />
+        
+        <Route
+          path="/animals/new"
+          render={props => {
+            return <AnimalForm {...props} />;
           }}
         />
-
+          <Route path="/login" component={Login} />
         {/*
   This is a new route to handle a URL with the following pattern:
   http://localhost:3000/animals/1
