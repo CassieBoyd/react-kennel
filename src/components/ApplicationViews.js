@@ -1,4 +1,4 @@
-import { Route } from "react-router-dom";
+import { Route, withRouter, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import Home from "./home/Home";
 import AnimalList from "./animal/AnimalList";
@@ -7,9 +7,16 @@ import AnimalDetail from "./animal/AnimalDetail";
 import LocationList from "./locations/LocationList";
 import EmployeeList from "./employees/EmployeeList";
 import OwnerList from "./owners/OwnerList";
+import Login from './auth/Login'
 import AnimalForm from "./animal/AnimalForm";
 
 class ApplicationViews extends Component {
+
+// Check if credentials are in local storage
+    //returns true/false boolean
+    isAuthenticated = () => localStorage.getItem("credentials") !== null
+
+
   render() {
     return (
       <React.Fragment>
@@ -21,13 +28,14 @@ class ApplicationViews extends Component {
           }}
         />
         {/* Make sure you add the `exact` attribute here */}
-        <Route
-          exact
-          path="/animals"
-          render={props => {
-            return <AnimalList {...props} />;
-          }}
-        />
+        <Route exact path="/animals" render={props => {
+    if (this.isAuthenticated()) {
+        return <AnimalList {...props} />
+    } else {
+        return <Redirect to="/login" />
+    }
+}} />
+
         {/* When route matches this path, execute a function */}
         <Route
           path="/animals/:animalId(\d+)"
@@ -35,11 +43,11 @@ class ApplicationViews extends Component {
             // Pass the animalId to the AnimalDetailComponent as props
             return (
               <AnimalDetail
-                animalId={parseInt(props.match.params.animalId)}
-                {...props}
+              animalId={parseInt(props.match.params.animalId)}
+              {...props}
               />
-            );
-          }}
+              );
+            }}
         />
         
         <Route
@@ -48,6 +56,7 @@ class ApplicationViews extends Component {
             return <AnimalForm {...props} />;
           }}
         />
+          <Route path="/login" component={Login} />
         {/*
   This is a new route to handle a URL with the following pattern:
   http://localhost:3000/animals/1
