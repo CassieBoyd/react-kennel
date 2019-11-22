@@ -1,4 +1,4 @@
-import { Route } from "react-router-dom";
+import { Route, withRouter, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import Home from "./home/Home";
 import AnimalList from "./animal/AnimalList";
@@ -7,8 +7,15 @@ import AnimalDetail from "./animal/AnimalDetail"
 import LocationList from "./locations/LocationList";
 import EmployeeList from "./employees/EmployeeList";
 import OwnerList from "./owners/OwnerList";
+import Login from './auth/Login'
 
 class ApplicationViews extends Component {
+
+// Check if credentials are in local storage
+    //returns true/false boolean
+    isAuthenticated = () => localStorage.getItem("credentials") !== null
+
+
   render() {
     return (
       <React.Fragment>
@@ -27,6 +34,9 @@ class ApplicationViews extends Component {
             return <AnimalList />;
           }}
         />
+
+<Route path="/login" component={Login} />
+
 
         {/* When route matches this path, execute a function */}
         <Route
