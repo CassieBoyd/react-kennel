@@ -11,7 +11,7 @@ class LocationList extends Component {
   };
 
   componentDidMount() {
-    console.log("ANIMAL LIST: ComponentDidMount");
+    console.log("LOCATION LIST: ComponentDidMount");
     //getAll from EmployeeManager and hang on to that data; put it in state
     LocationManager.getAll().then(locationsArray => {
       // Always update state with .setState, takes an object

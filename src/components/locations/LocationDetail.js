@@ -16,7 +16,9 @@ class LocationDetail extends Component {
     LocationManager.get(this.props.locationId)
     .then((location) => {
       this.setState({
-        address: location.address
+        address: location.address,
+        name: location.name,
+        phoneNumber: location.phoneNumber
       });
     });
   }
@@ -25,15 +27,13 @@ class LocationDetail extends Component {
     return (
       <div className="card">
         <div className="card-content">
-          <picture>
-            <img src={require('./dog.svg')} alt="My Dog" />
-          </picture>
-            <h3>Name: <span style={{ color: 'darkslategrey' }}>{this.state.address}</span></h3>
-            <p>Breed: {this.state.breed}</p>
+            <h3>Facility: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
+            <p>Address: {this.state.address}</p>
+            <p>Phone: {this.state.phoneNumber}</p>
         </div>
       </div>
     );
   }
 }
 
-export default AnimalDetail;
+export default LocationDetail;
