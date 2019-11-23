@@ -9,7 +9,7 @@ class NavBar extends Component {
     return (
       <header>
         <h1 className="site-title">Fairytail Kennels<br />
-          <small>Our magical menagerie is the place to be.</small>
+          <small>Our magical menagerie is the place for ye.</small>
         </h1>
         <nav>
           <ul className="container">

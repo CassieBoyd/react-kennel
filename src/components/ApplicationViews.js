@@ -10,6 +10,7 @@ import OwnerList from "./owners/OwnerList";
 import Login from "./auth/Login";
 import AnimalForm from "./animal/AnimalForm";
 import AnimalEditForm from "./animal/AnimalEditForm";
+import LocationDetail from "./locations/LocationDetail";
 
 class ApplicationViews extends Component {
   // Check if credentials are in local storage
@@ -67,6 +68,26 @@ class ApplicationViews extends Component {
             return <AnimalForm {...props} />;
           }}
         />
+
+        <Route
+          exact
+          path="/locations"
+          render={props => {
+            return <LocationList />;
+          }}
+        />
+        <Route
+          path="/locations/:locationId(\d+)"
+          render={props => {
+            // Pass the locationId to the LocationDetailComponent
+            return (
+              <LocationDetail
+                locationId={parseInt(props.match.params.locationId)}
+              />
+            );
+          }}
+        />
+
         <Route path="/login" component={Login} />
         {/*
   This is a new route to handle a URL with the following pattern:
@@ -86,12 +107,6 @@ class ApplicationViews extends Component {
           path="/employees"
           render={props => {
             return <EmployeeList />;
-          }}
-        />
-        <Route
-          path="/locations"
-          render={props => {
-            return <LocationList />;
           }}
         />
       </React.Fragment>
