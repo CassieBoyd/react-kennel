@@ -59,16 +59,6 @@ class AnimalList extends Component {
             />
           ))}
         </div>
-        <section className="section-content">
-          <button
-            type="button"
-            className="btn"
-            onClick={() => {
-              this.props.history.push("/animals/new");
-            }}>
-            Admit Animal
-          </button>
-        </section>
       </React.Fragment>
     );
   }
