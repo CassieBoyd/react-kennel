@@ -15,8 +15,8 @@ class Login extends Component {
     this.setState(stateToChange)
   }
 
-  handleLogin = (e) => {
-    e.preventDefault()
+  handleLogin = (evt) => {
+    evt.preventDefault()
     /*
         For now, just store the email and password that
         the customer enters into local storage.
