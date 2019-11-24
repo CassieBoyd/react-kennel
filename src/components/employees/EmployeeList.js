@@ -39,6 +39,19 @@ class EmployeeList extends Component {
     console.log("EmployeeList: Render");
   console.log(this.state.employees)
     return(
+
+<React.Fragment>
+        <section className="section-content">
+          <button
+            type="button"
+            className="btn"
+            onClick={() => {
+              this.props.history.push("/employees/new");
+            }}>
+            Hire Employee
+          </button>
+        </section>
+
       <div className="container-cards">
         {this.state.employees.map(employee =>
           <EmployeeCard
@@ -48,6 +61,7 @@ class EmployeeList extends Component {
           />
         )}
       </div>
+      </React.Fragment>
     )
   }
 }

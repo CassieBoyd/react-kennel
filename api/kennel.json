@@ -56,6 +56,11 @@
     {
       "id": 5,
       "name": "Thing 1"
+    },
+    {
+      "name": "Sara Conner",
+      "breed": "958-969-4325",
+      "id": 6
     }
   ],
   "locations": [

@@ -13,5 +13,14 @@ export default {
         method: "DELETE"
     })
     .then(result => result.json())
-  }
+  },
+  post(newEmployee) {
+    return fetch(`${remoteURL}/employees`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newEmployee)
+    }).then(data => data.json())
+}
 }

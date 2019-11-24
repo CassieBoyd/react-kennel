@@ -13,7 +13,7 @@ export default {
     return fetch(`${remoteURL}/animals`).then(result => result.json())
   },
 
-  // fetches the data on a single animal using the id as an argument and the delete method is called to delete the animals' object from the API. .then takes the result and converts it to json format. We aren't currently using the result for anything.
+  // targets the data on a single animal using the id as an argument and the delete method is called to delete the animals' object from the API. .then takes the result and converts it to json format. We aren't currently using the result for anything.
   delete(id) {
     return fetch(`http://localhost:5002/animals/${id}`, {
         method: "DELETE"
@@ -29,13 +29,18 @@ export default {
         body: JSON.stringify(newAnimal)
     }).then(data => data.json())
 },
+
+// updates the data on a single animal using the PUT method.
 update(editedAnimal) {
   return fetch(`${remoteURL}/animals/${editedAnimal.id}`, {
     method: "PUT",
+    // Telling the server what data type to expect.
     headers: {
       "Content-Type": "application/json"
     },
+    // .stringify turns the editedAnimal object into a string to pass it over the internet.
     body: JSON.stringify(editedAnimal)
+    // then the response is converted to json format turning it back into an object.
   }).then(data => data.json());
 }
 }
