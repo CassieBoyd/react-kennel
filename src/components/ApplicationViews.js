@@ -14,6 +14,7 @@ import LocationDetail from "./locations/LocationDetail";
 import EmployeeForm from "./employees/EmployeeForm";
 import EmployeeWithAnimals from "./employees/EmployeeWithAnimals";
 import OwnerForm from "./owners/OwnerForm";
+import LocationForm from "./locations/LocationForm";
 class ApplicationViews extends Component {
   // Check if credentials are in local storage
   //returns true/false boolean
@@ -70,14 +71,22 @@ class ApplicationViews extends Component {
             return <AnimalForm {...props} />;
           }}
         />
-
+        {/* *****************LOCATION ROUTES*********************** */}
         <Route
           exact
           path="/locations"
           render={props => {
-            return <LocationList />;
+            return <LocationList {...props} />;
           }}
         />
+
+        <Route
+          path="/locations/new"
+          render={props => {
+            return <LocationForm {...props} />;
+          }}
+        />
+
         <Route
           path="/locations/:locationId(\d+)"
           render={props => {
