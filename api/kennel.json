@@ -68,6 +68,11 @@
       "name": "Sara Conner",
       "breed": "958-969-4325",
       "id": 6
+    },
+    {
+      "name": "Sara Conner",
+      "breed": "958-969-4325",
+      "id": 7
     }
   ],
   "locations": [
@@ -116,6 +121,11 @@
       "id": 4,
       "name": "Dorothy Gale",
       "phoneNumber": "868-869-8565"
+    },
+    {
+      "name": "Hermione Jean Granger",
+      "phoneNumber": "034-287-3424",
+      "id": 5
     }
   ]
 }

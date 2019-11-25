@@ -7,7 +7,7 @@ class LocationDetail extends Component {
   state = {
       name: "",
       address: "",
-      phoneNumber: "",
+      phoneNumber: ""
   }
 
   componentDidMount(){
