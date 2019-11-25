@@ -3,37 +3,44 @@
     {
       "id": 1,
       "name": "Hedwig",
-      "breed": "Snowy Owl"
+      "breed": "Snowy Owl",
+      "employeeId": 1
     },
     {
       "id": 2,
       "name": "Eureka",
-      "breed": "Domestic Shorthair"
+      "breed": "Domestic Shorthair",
+      "employeeId": 2
     },
     {
       "id": 3,
       "name": "Crookshanks",
-      "breed": "Half-Kneazle"
+      "breed": "Half-Kneazle",
+      "employeeId": 1
     },
     {
       "id": 4,
       "name": "Elliot",
-      "breed": "Dragon"
+      "breed": "Dragon",
+      "employeeId": 3
     },
     {
       "id": 5,
       "name": "Expendable",
-      "breed": "Ghost"
+      "breed": "Ghost",
+      "employeeId": 3
     },
     {
       "id": 6,
       "name": "Cannon Fodder",
-      "breed": "Also a ghost"
+      "breed": "Also a ghost",
+      "employeeId": 3
     },
     {
       "name": "Peach",
       "breed": "American Shorthair",
-      "id": 7
+      "id": 7,
+      "employeeId": 4
     }
   ],
   "employees": [

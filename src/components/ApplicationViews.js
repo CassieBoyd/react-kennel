@@ -12,7 +12,7 @@ import AnimalForm from "./animal/AnimalForm";
 import AnimalEditForm from "./animal/AnimalEditForm";
 import LocationDetail from "./locations/LocationDetail";
 import EmployeeForm from "./employees/EmployeeForm";
-
+import EmployeeWithAnimals from "./employees/EmployeeWithAnimals";
 class ApplicationViews extends Component {
   // Check if credentials are in local storage
   //returns true/false boolean
@@ -118,6 +118,12 @@ class ApplicationViews extends Component {
           path="/employees/new"
           render={props => {
             return <EmployeeForm {...props} />;
+          }}
+        />
+        <Route
+          path="/employees/:employeeId(\d+)/details"
+          render={props => {
+            return <EmployeeWithAnimals {...props} />;
           }}
         />
       </React.Fragment>
