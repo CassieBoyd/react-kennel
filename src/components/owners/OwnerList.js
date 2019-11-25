@@ -38,6 +38,15 @@ class OwnerList extends Component {
     console.log("OwnerList: Render");
   
     return(
+      // Wrapping tags in React.Fragment allows the component to return multiple elements.
+      <React.Fragment>
+      <section className="section-content">
+  <button type="button"
+      className="btn"
+      onClick={() => {this.props.history.push("/owners/new")}}>
+      Add Owner
+  </button>
+</section>
       <div className="container-cards">
         {this.state.owners.map(owner =>
           <OwnerCard
@@ -47,6 +56,7 @@ class OwnerList extends Component {
           />
         )}
       </div>
+      </React.Fragment>
     )
   }
 }

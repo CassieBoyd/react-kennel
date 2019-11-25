@@ -13,6 +13,7 @@ import AnimalEditForm from "./animal/AnimalEditForm";
 import LocationDetail from "./locations/LocationDetail";
 import EmployeeForm from "./employees/EmployeeForm";
 import EmployeeWithAnimals from "./employees/EmployeeWithAnimals";
+import OwnerForm from "./owners/OwnerForm";
 class ApplicationViews extends Component {
   // Check if credentials are in local storage
   //returns true/false boolean
@@ -98,10 +99,22 @@ class ApplicationViews extends Component {
   matches only numbers after the final slash in the URL
   http://localhost:3000/animals/jack
 */}
+
+        {/* **********************OWNER ROUTES************************* */}
+        {/* include the ...props argument and pass it to the child component via return. This sets up the ability to use the history.push() mechanism in the components themselves to change the URL in the browser. */}
         <Route
+          exact
           path="/owners"
           render={props => {
-            return <OwnerList />;
+            // Renders OwnerList with props passed down from react-router-dom
+            return <OwnerList {...props} />;
+          }}
+        />
+
+        <Route
+          path="/owners/new"
+          render={props => {
+            return <OwnerForm {...props} />;
           }}
         />
 
