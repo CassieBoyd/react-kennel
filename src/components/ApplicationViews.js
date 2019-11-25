@@ -30,7 +30,7 @@ class ApplicationViews extends Component {
             return <Home />;
           }}
         />
-        {/* Make sure you add the `exact` attribute here */}
+        {/* *****************ANIMAL ROUTES******************** */}
         <Route
           exact
           path="/animals"
@@ -76,7 +76,11 @@ class ApplicationViews extends Component {
           exact
           path="/locations"
           render={props => {
-            return <LocationList {...props} />;
+            if (this.isAuthenticated()) {
+              return <LocationList {...props} />;
+            } else {
+              return <Redirect to="/login" />;
+            }
           }}
         />
 
@@ -99,7 +103,6 @@ class ApplicationViews extends Component {
           }}
         />
 
-        <Route path="/login" component={Login} />
         {/*
   This is a new route to handle a URL with the following pattern:
   http://localhost:3000/animals/1
@@ -114,9 +117,13 @@ class ApplicationViews extends Component {
         <Route
           exact
           path="/owners"
+          // Renders OwnerList with props passed down from react-router-dom
           render={props => {
-            // Renders OwnerList with props passed down from react-router-dom
-            return <OwnerList {...props} />;
+            if (this.isAuthenticated()) {
+              return <OwnerList {...props} />;
+            } else {
+              return <Redirect to="/login" />;
+            }
           }}
         />
 
@@ -132,7 +139,11 @@ class ApplicationViews extends Component {
           exact
           path="/employees"
           render={props => {
-            return <EmployeeList {...props} />;
+            if (this.isAuthenticated()) {
+              return <EmployeeList {...props} />;
+            } else {
+              return <Redirect to="/login" />;
+            }
           }}
         />
 
@@ -148,6 +159,8 @@ class ApplicationViews extends Component {
             return <EmployeeWithAnimals {...props} />;
           }}
         />
+
+        <Route path="/login" component={Login} />
       </React.Fragment>
     );
   }
