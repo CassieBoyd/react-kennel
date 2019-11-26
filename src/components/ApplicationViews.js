@@ -18,7 +18,7 @@ import LocationForm from "./locations/LocationForm";
 class ApplicationViews extends Component {
   // Check if credentials are in local storage
   //returns true/false boolean
-  isAuthenticated = () => localStorage.getItem("credentials") !== null;
+  // isAuthenticated = () => localStorage.getItem("credentials") !== null;
 
   render() {
     return (
@@ -35,7 +35,7 @@ class ApplicationViews extends Component {
           exact
           path="/animals"
           render={props => {
-            if (this.isAuthenticated()) {
+            if (this.props.user) {
               return <AnimalList {...props} />;
             } else {
               return <Redirect to="/login" />;
@@ -76,7 +76,7 @@ class ApplicationViews extends Component {
           exact
           path="/locations"
           render={props => {
-            if (this.isAuthenticated()) {
+            if (this.props.user) {
               return <LocationList {...props} />;
             } else {
               return <Redirect to="/login" />;
@@ -119,7 +119,7 @@ class ApplicationViews extends Component {
           path="/owners"
           // Renders OwnerList with props passed down from react-router-dom
           render={props => {
-            if (this.isAuthenticated()) {
+            if (this.props.user) {
               return <OwnerList {...props} />;
             } else {
               return <Redirect to="/login" />;
@@ -139,7 +139,7 @@ class ApplicationViews extends Component {
           exact
           path="/employees"
           render={props => {
-            if (this.isAuthenticated()) {
+            if (this.props.user) {
               return <EmployeeList {...props} />;
             } else {
               return <Redirect to="/login" />;
@@ -160,7 +160,9 @@ class ApplicationViews extends Component {
           }}
         />
 
-        <Route path="/login" component={Login} />
+        <Route path="/login" render={(props) => {
+          return <Login setUser= {this.props.setUser} {...props} />
+        }} />
       </React.Fragment>
     );
   }
