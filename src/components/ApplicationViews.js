@@ -76,11 +76,7 @@ class ApplicationViews extends Component {
           exact
           path="/locations"
           render={props => {
-            if (this.props.user) {
               return <LocationList {...props} />;
-            } else {
-              return <Redirect to="/login" />;
-            }
           }}
         />
 
