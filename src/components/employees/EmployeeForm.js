@@ -24,7 +24,7 @@ class EmployeeForm extends Component {
             this.setState({ loadingStatus: true });
             const employee = {
                 name: this.state.employeeName,
-                breed: this.state.phoneNumber,
+                phoneNumber: this.state.phoneNumber,
             };
 
             // Create the employee and redirect user to employee list
