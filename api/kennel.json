@@ -46,33 +46,43 @@
   "employees": [
     {
       "id": 1,
-      "name": "Hagrid"
+      "name": "Hagrid",
+      "phoneNumber": "958-969-4325"
     },
     {
       "id": 2,
-      "name": "Dr. Dolittle"
+      "name": "Dr. Dolittle",
+      "phoneNumber": "958-969-4325"
     },
     {
       "id": 3,
-      "name": "Fluttershy"
+      "name": "Fluttershy",
+      "phoneNumber": "958-969-4325"
     },
     {
       "id": 4,
-      "name": "Snow White"
+      "name": "Snow White",
+      "phoneNumber": "958-969-4325"
     },
     {
       "id": 5,
-      "name": "Thing 1"
+      "name": "Thing 1",
+      "phoneNumber": "958-969-4325"
+    },
+    {
+      "id": 6,
+      "name": "Not Sara Conner",
+      "phoneNumber": "958-969-4325"
     },
     {
       "name": "Sara Conner",
-      "breed": "958-969-4325",
-      "id": 6
-    },
-    {
-      "name": "Sara Conner",
-      "breed": "958-969-4325",
+      "phoneNumber": "958-969-4325",
       "id": 7
+    },
+    {
+      "name": "Boopy",
+      "phoneNumber": "958-969-4325",
+      "id": 8
     }
   ],
   "locations": [
