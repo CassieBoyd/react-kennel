@@ -15,6 +15,7 @@ import EmployeeForm from "./employees/EmployeeForm";
 import EmployeeWithAnimals from "./employees/EmployeeWithAnimals";
 import OwnerForm from "./owners/OwnerForm";
 import LocationForm from "./locations/LocationForm";
+import EmployeeEditForm from "./employees/EmployeeEditForm"
 class ApplicationViews extends Component {
   // Check if credentials are in local storage
   //returns true/false boolean
@@ -150,7 +151,7 @@ class ApplicationViews extends Component {
           }}
         />
         <Route
-          path="/employees/:employeeId(\d+)/details"
+          exact path="/employees/:employeeId(\d+)/details"
           render={props => {
             return <EmployeeWithAnimals {...props} />;
           }}
@@ -159,6 +160,12 @@ class ApplicationViews extends Component {
         <Route path="/login" render={(props) => {
           return <Login setUser= {this.props.setUser} {...props} />
         }} />
+
+<Route
+  path="/employees/:employeeId(\d+)/edit" render={props => {
+    return <EmployeeEditForm {...props} />
+  }}
+/>
       </React.Fragment>
     );
   }
